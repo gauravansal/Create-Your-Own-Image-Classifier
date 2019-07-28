@@ -103,18 +103,18 @@ As you can see you have a wide selection of hyperparameters available and you ca
 * A big learning rate guarantees that the network will converge fast to a small error but it will constantly overshot
 * A small learning rate guarantees that the network will reach greater accuracies but the learning process will take longer
 * Densenet121 works best for images but the training process takes significantly longer than alexnet or vgg16
-
-* My settings were lr=0.001, dropout=0.3, epochs= 12 and my test accuracy was 92% with densenet121 as my feature extraction model.
+My settings were lr=0.001, dropout=0.3, epochs= 12 and my test accuracy was 92% with densenet121 as my feature extraction model.
 
 ### ***Pre-Trained Network***
 The checkpoint.pth file contains the information of a network trained to recognise 102 different species of flowers. It has been trained with specific hyperparameters thus if you don't set them right the network will fail. In order to have a prediction for an image located in the path /path/to/image using pretrained model you can simply type ```python predict.py /path/to/image checkpoint.pth```
 
 ## Results<a name="results"></a>
  - 92% Accuracy of the network on the test images was produced.
- - ![Entire Analysis can be found here: Developing an AI application](https://nbviewer.jupyter.org/github/gauravansal/Create-Your-Own-Image-Classifier/blob/master/Image%20Classifier%20Project.html)
+ - [Entire Analysis can be found here: Developing an AI application(https://nbviewer.jupyter.org/github/gauravansal/Create-Your-Own-Image-Classifier/blob/master/Image%20Classifier%20Project.html)]
 
 
 ## Screenshots<a name="screenshots"></a>
+***Inference for classification***
 ![Inference for classification](https://github.com/gauravansal/Create-Your-Own-Image-Classifier/blob/master/assets/inference_example.png)
 
 
