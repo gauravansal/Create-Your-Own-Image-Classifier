@@ -17,6 +17,7 @@ Going forward, AI algorithms will be incorporated into more and more everyday ap
 
 In this project, you'll train an image classifier to recognize different species of flowers. You can imagine using something like this in a phone app that tells you the name of the flower your camera is looking at. In practice you'd train this classifier, then export it for use in your application. We'll be using [this dataset](http://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html) of 102 flower categories, you can see a few examples below.
 
+![Flowers](https://github.com/gauravansal/Create-Your-Own-Image-Classifier/blob/master/assets/Flowers.png)
 
 The project is broken down into multiple steps:
 * Load and preprocess the image dataset
@@ -27,13 +28,13 @@ When you've completed this project, you'll have an application that can be train
 
 ## Project Components<a name="components"></a>
 
-The Project is divided in the following two components:
+The Project is divided in the following two parts:
 
 1. Deep Learning Model - 
 In a Jupyter Notebook, a flower dataset of images is downloaded as a training, testing, and validation set. Then the datasets are transformed in order to increase accuracy as well as fit the input format for pre-trained networks. Resizing, cropping, random flipping are a few transformations. Next, densenet121 is chosen to use as the pre-trained network, and a new feed-forward classifier using the features of pre-trained network is defined. Both ReLU activation and dropout are used in the the classifier. After defining hyperparameters, such as number of epochs, the learning rate, etc. the model is trained on the training set. Training loss, validation loss, and accuracy are printed. After running the test set through the model, an accuracy of about 92% is achieved. A checkpoint saves the model, classifier, and its hyperparameters. A predict and check function are defined which output the top 5 possible flower species for a given image, along with their probabilities in a bar chart.
 
 2. Command Line Application - 
-The second portion of the project includes the 2 python files, “train.py” and “predict.py.” This application allows people to train a model on a dataset of images and then predict their classes from the command line. The train file uses the same NeuralNetwork class from Part I, but now the user can choose either densenet121, vgg16, alexnet or resnet18 as the pre-trained network. Other parameters, such as number of epochs, number of hidden layers, etc. can be changed from the user. This file should output training loss, validation loss, and accuracy; as well as save a checkpoint. In the predict file, the checkpoint from the train file is loaded and then the top ‘k’ classes and their probabilities are printed.
+The second portion of the project includes the 2 python files, “train.py” and “predict.py.” This application allows people to train a model on a dataset of images and then predict their classes from the command line. The train file uses the same NeuralNetwork class from Part 1, but now the user can choose either densenet121, vgg16, alexnet or resnet18 as the pre-trained network. Other parameters, such as number of epochs, number of hidden layers, etc. can be changed by the user. This file should output training loss, validation loss, and accuracy; as well as save a checkpoint. In the predict file, the checkpoint from the train file is loaded and then the top ‘k’ classes and their probabilities are printed.
 
 ## Installation<a name="installation"></a>
 
@@ -46,23 +47,23 @@ The second portion of the project includes the 2 python files, “train.py” an
 
 Below are the files/folders:
 1. `data` - 
-The data used specifically for this assignemnt are a flower database are not provided in the repository as it's larger than what github allows. Nevertheless, feel free to create your own databases and train the model on them to use with your own projects. The structure of your data should be the following:
-The data need to comprised of 3 folders, test, train and validate. Generally the proportions should be 70% training 10% validate and 20% test.
-Inside the train, test and validate folders there should be folders bearing a specific number which corresponds to a specific category, clarified in the json file. For example if we have the image "a.jpg" and it is a rose it could be in a path like this /test/5/a.jpg and json file would be like this {...5:"rose",...}. Make sure to include a lot of photos of your catagories (more than 10) with different angles and different lighting conditions in order for the network to generalize better.
-2. `cat_to_name.json` - In order for the network to print out the name of the flower a .json file is required. If you aren't familiar with json you can find information [here](https://www.json.org/). By using a .json file the data can be sorted into folders with numbers and those numbers will correspond to specific names specified in the .json file.
-3. `Image Classifier Project.ipynb` - a Jupyter Notebook to perfrom the loading, training, testing and validation.
-4. `train.py` - Train a new network on a data set with train.py on Command Line Application.
-5. `predict.py` -  Predict flower name from an image with predict.py along with the probability of that name on Command Line Application.
-6. `checkpoint_model_pretrained_densenet.pth` - a PyTorch checkpoint to save the model and its parameter.
-7. `func_model.py` - python file containing all the functions used during model creation, training, validation, checkpoint creation and testing.
-8. `func_util.py` - python file containing all the functions for image pre-processing.
+The data used specifically for this assignment is a flower database and is not provided in the repository as it's larger than what github allows. Nevertheless, feel free to create your own databases and train the model on them to use with your own projects. The structure of your data should be the following:
+ - The data needs to be comprised of 3 folders namely, test, train and validate. Generally the proportions should be 70% training 10% validation and 20% test data.
+- Inside the train, test and validation folders there should be folders bearing a specific number which corresponds to a specific category, clarified in the json file. For example if we have the image "a.jpg" and it is a rose it could be in a path like this /test/5/a.jpg and json file would be like this {...5:"rose",...}. Make sure to include a lot of photos of your catagories (more than 10) with different angles and different lighting conditions in order for the network to generalize better.
+2. `cat_to_name.json` - In order for the network to print out the name of the flower a ".json" file is required. If you aren't familiar with json you can find information [here](https://www.json.org/). By using a ".json" file the data can be sorted into folders with numbers and those numbers will correspond to specific names specified in the ".json" file.
+3. `Image Classifier Project.ipynb` - a Jupyter Notebook to perform the loading, training, testing and validation of image data.
+4. `train.py` - Train a new network on a data set with train.py within Command Line Application.
+5. `predict.py` -  Predict flower name from an image with predict.py along with the probability of that name within Command Line Application.
+6. `checkpoint_model_pretrained_densenet.pth` - a PyTorch checkpoint to save the model and its hyperparameters.
+7. `func_model.py` - python file containing all the functions used during model creation, training, validation, checkpoint creation and testing of image data.
+8. `func_util.py` - python file containing all the functions for image data pre-processing.
 
 
 ## Instructions<a name="instructions"></a>
 ### ***Viewing the Jyputer Notebook***
 In order to better view and work on the jupyter Notebook I encourage you to use nbviewer . You can simply copy and paste the link to this website and you will be able to edit it without any problem. Alternatively you can clone the repository using
 
-```git clone https://github.com/gauravansal/Create-Your-Own-Image-Classifier-Project/```
+```git clone https://github.com/gauravansal/Create-Your-Own-Image-Classifier/```
 then in the command Line type, after you have downloaded jupyter notebook type
 
 ```jupyter notebook```
@@ -110,11 +111,11 @@ The checkpoint.pth file contains the information of a network trained to recogni
 
 ## Results<a name="results"></a>
  - 92% Accuracy of the network on the test images was produced.
- - ![Entire Analysis can be found here: Create Your Own Image Classifier Project]()
+ - ![Entire Analysis can be found here: Developing an AI application](https://nbviewer.jupyter.org/github/gauravansal/Create-Your-Own-Image-Classifier/blob/master/Image%20Classifier%20Project.html)
 
 
 ## Screenshots<a name="screenshots"></a>
-![Inference for classification]()
+![Inference for classification](https://github.com/gauravansal/Create-Your-Own-Image-Classifier/blob/master/assets/inference_example.png)
 
 
 ## Licensing, Authors, and Acknowledgements<a name="licensing"></a>
